@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+</head>
+<body>
+    <form method="POST" id="form">  
+        <input type="number" name="times" id="times">
+        <textarea name="text">
+
+        </textarea>
+        <button type="submit" name="Submit" id="submit">Submit</button>
+    </form>
+</body>
+<script>
+    document.getElementById('form').addEventListener('submit', function() {
+    setTimeout(function() {
+        document.getElementById('form').reset();
+    }, 100);
+});
+</script>
+</html>

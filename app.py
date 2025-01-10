@@ -1,4 +1,4 @@
-from batchTranslate import translate
+# from batchTranslate import translate
 from flask import Flask,request,session,render_template,redirect
 
 app=Flask(__name__)

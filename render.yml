@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: my-flask-app
+    name: bestCoder1877
     env: python
     runtime:
       version: 3.10
@@ -13,6 +13,6 @@ services:
         value: 0.0.0.0
       - key: FLASK_RUN_PORT
         value: $PORT
-    startCommand: flask run app.py --host=0.0.0.0 --port=$PORT
+    startCommand: flask run app.py
     buildCommand: pip install -r requirements.txt
     plan: free

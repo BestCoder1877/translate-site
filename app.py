@@ -1,5 +1,6 @@
 from batchTranslate import translate
 from flask import Flask,request,session,render_template,redirect
+from os import getenv
 
 app=Flask(__name__)
 app.config['SECRET_KEY'] = 'hello'
@@ -22,4 +23,4 @@ def get():
     return resualt
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=False,port=int(getenv('PORT', 8080)))

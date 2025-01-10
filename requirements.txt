@@ -1,0 +1,3 @@
+flask
+batchTranslate
+deep_translator

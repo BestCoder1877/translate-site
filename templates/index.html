@@ -4,21 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Translate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form method="POST" id="form">  
+    <form method="POST" id="form">
         <input type="number" name="times" id="times">
-        <textarea name="text">
-
-        </textarea>
+        <textarea name="text" id="text"></textarea>
         <button type="submit" name="Submit" id="submit">Submit</button>
     </form>
+<div class="progress-bar-container" id="loading">
+    <div class="progress-bar"></div>
+</div>
 </body>
 <script>
-    document.getElementById('form').addEventListener('submit', function() {
+if (localStorage.getItem('reset')==true){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('form').style.display = 'block';
+    localStorage.setItem('reset', false);
+}
+document.getElementById('form').addEventListener('submit', function() {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('form').style.display = 'none';
     setTimeout(function() {
         document.getElementById('form').reset();
     }, 100);
 });
+function keepAlive() {
+    fetch('/keep-alive');
+}
+setInterval(keepAlive,2000);
 </script>
 </html>
